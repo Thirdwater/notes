@@ -1,0 +1,15 @@
+= Notes
+
+// Metadata
+:description: A collection of personal notes on various topics.
+
+// Settings
+:toc: left
+:toc-title: Notes
+:sectnums:
+:source-highlighter: pygments
+:pygments-style: tango
+:pygments-linenums-mode: table
+
+// Content
+Lorem ipsum
