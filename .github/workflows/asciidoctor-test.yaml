@@ -1,11 +1,16 @@
 name: Asciidoctor Action Test
-on: [push]
+on:
+    push:
+        branches:
+            - main
+        paths:
+            - "doc/**"
 jobs:
     asciidoc-to-html:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout source
               uses: actions/checkout@v2
+
             - name: Install Asciidoctor
               run: sudo apt-get install -y asciidoctor
-            - run: asciidoctor --version
