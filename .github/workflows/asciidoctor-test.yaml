@@ -1,4 +1,4 @@
-name: Asciidoctor Action Test
+name: Publish with Asciidoctor
 on:
     push:
         branches:
@@ -18,3 +18,15 @@ jobs:
 
             - name: Convert documents to HTML
               run: asciidoctor asciidocs/index.asciidoc --destination-dir docs
+
+            - name: Save Changes
+              run: |
+                  git config --local user.email "thirdwater@gmail.com"
+                  git config --local user.name "Thirdwater"
+                  git add docs
+                  git commit -m "Asciidoctor output"
+            - name: Publish to Github Pages
+              uses: ad-m/github-push-action@master
+              with:
+                  branch: github-pages
+                  github_token: ${{ secrets.GITHUB_TOKEN }}
