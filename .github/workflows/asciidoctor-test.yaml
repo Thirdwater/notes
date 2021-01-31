@@ -30,3 +30,4 @@ jobs:
               with:
                   branch: github-pages
                   github_token: ${{ secrets.GITHUB_TOKEN }}
+                  force: true
