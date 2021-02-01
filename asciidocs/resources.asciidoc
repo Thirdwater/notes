@@ -14,7 +14,7 @@
 
 == Machine Learning
 :book-deep-learning: https://www.deeplearningbook.org
-:book-reinforcement-learning: incompleteideas.net/book/the-book.html
+:book-reinforcement-learning: http://incompleteideas.net/book/the-book.html
 
 * {book-deep-learning}[Deep Learning] book by Ian Goodfellow, Yoshua Bengio, and Aaron Courville
 * {book-reinforcement-learning}[Reinforcement Learning: An Introduction] book by Richard S. Sutton and Andrew G. Barto

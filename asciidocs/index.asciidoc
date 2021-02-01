@@ -12,4 +12,6 @@
 :pygments-linenums-mode: table
 
 // Content
+:leveloffset: +1
 include::resources.asciidoc[]
+:leveloffset: 0
