@@ -1,0 +1,20 @@
+= Resources
+
+== Programming
+:book-pragmatic-programmer: https://pragprog.com/titles/tpp20/the-pragmatic-programmer-20th-anniversary-edition/
+
+* {book-pragmatic-programmer}[The Pragmatic Programmer] book by David Thomas and Andrew Hunt
+
+== Programming Languages
+:book-think-julia: https://benlauwens.github.io/ThinkJulia.jl/latest/book.html
+:book-effective-java: https://www.amazon.com/Effective-Java-Joshua-Bloch/dp/0134685997
+
+* {book-think-julia}[Think Julia: How to Think Like a Computer Scientist] book by Ben Lauwens and Allen Downey
+* {book-effective-java}[Effective Java] book by Joshua Bloch
+
+== Machine Learning
+:book-deep-learning: https://www.deeplearningbook.org
+:book-reinforcement-learning: incompleteideas.net/book/the-book.html
+
+* {book-deep-learning}[Deep Learning] book by Ian Goodfellow, Yoshua Bengio, and Aaron Courville
+* {book-reinforcement-learning}[Reinforcement Learning: An Introduction] book by Richard S. Sutton and Andrew G. Barto
