@@ -14,9 +14,10 @@ jobs:
               uses: actions/checkout@v2
 
             - name: Install Asciidoctor
-              run: sudo apt-get install -y asciidoctor
-              run: sudo apt-get install -y python
-              run: sudo gem install pygments.rb
+              run: |
+                  sudo apt-get install -y asciidoctor
+                  sudo apt-get install -y python
+                  sudo gem install pygments.rb
 
             - name: Convert documents to HTML
               run: asciidoctor asciidocs/index.adoc --destination-dir docs --verbose
