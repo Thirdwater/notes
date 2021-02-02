@@ -26,14 +26,100 @@ Consider `println("Hello")`;
 
 === Exercise 1-2
 
-Take 1 mile to be 1.61 km;
-
 . There are `(42 * 60) + 42 = 2562` seconds in 42 minutes and 42 seconds.
 
+Take 1 mile to be 1.61 km;
+
+[start=2]
 . There are `10 / 1.61 ~ 6.21` miles in 10 km.
 
-. So for a 10 km in 37 minutes and 48 seconds pace,
+. For a 10 km in 37 minutes and 48 seconds pace,
   we get 6.21 miles in 37 minutes and 48 seconds.
-  This is `(37 * 60) + 48 = 2268` seconds in total.
-  So the average speed is `(10 / 1.61) / 2268` miles per second,
-  which is `60 * 60 * (10 / 1.61) / 2268 ~ 9.86` miles per hour.
++
+This is `(37 * 60) + 48 = 2268` seconds in total.
++
+So the average speed is `(10 / 1.61) / 2268` miles per second,
+which is `60 * 60 * (10 / 1.61) / 2268 ~ 9.86` miles per hour.
+
+== Chapter 2: Variables, Expressions, and Statements
+
+=== Exercise 2-1
+
+Consider:
+
+[source, julia, linenums, options="nowrap"]
+----
+5
+x = 5
+x + 1
+----
+
+* The REPL would display `5`, `5`, and `6` after each statements respectively.
+* The script would not display anything.
+* To get the same output from the script, consider:
++
+[source, julia, linenums, options="nowrap"]
+----
+println(5)
+x = 5
+println(x)
+println(x + 1)
+----
+
+=== Exercise 2-2
+
+. `42 = n` results in `invalid assignment location` error on the value `42`.
+
+. `x = y = 1` is valid and results in both `x` and `y` referring to the value `1`.
+
+. Semicolon delimits expressions and statements and is valid.
+  In the REPL, semicolons will also suppress the output from printing,
+  the preceding expression/statement will still be evaluated/executed.
++
+[source, julia, linenums, options="nowrap"]
+----
+x = 1; y = 2;  # no REPL output
+x  # outputs 1
+y  # outputs 2
+----
+
+. Putting a period at the end of a statement results in syntax error.
++
+But when the last expression is still valid after adding the period,
+we will simply get different semantic based on what the period does to the expression
+(e.g. `x = 5.` resulting in `x` being a float instead of integer).
+
+. Given numerical variables `x` and `y`, `x y` results in a syntax error
+  and `xy` is just another identifier.
++
+However, `5x` is valid in Julia and works as in maths with multiplication precedence
+(e.g. `x = 5; 2x^2` results in 50 and not 100).
+Note that this is unambiguous since variables cannot start with a number.
+
+=== Exercise 2-3
+
+. The volume of a sphere with radius 5 is `(4/3)π * 5^3 ~ 523.6`.
+
+. For the price of $24.95 with 40% discount,
+  each item would cost `24.95 * 0.6 = $14.97`.
++
+For $3, $0.75 shipping costs for the first and subsequent items respectively,
+the total shipping cost for 60 items would be `3 + (0.75 * 59) = $47.25`.
++
+So the total cost would be `(14.97 * 60) + 47.25 = $945.45`.
+
+. For 8 minutes and 15 seconds per mile pace, each mile will take `(8 * 60) + 15 = 495` seconds.
++
+For 7 minutes and 12 seconds per mile pace, each mile will take `(7 * 60) + 12 = 432` seconds.
++
+So 2 miles at the slower pace takes `495 * 2 = 990` seconds,
+and 3 miles at the faster pace takes `432 * 3 = 1296` seconds.
++
+So the whole trip takes `990 + 1296 = 2286` seconds.
++
+The starting time is `((6 * 60) + 52) * 60 = 24720` seconds,
+so the final time is `24720 + 2286 = 27006` seconds
+which is `div(27006, 60 * 60) = 7` hours and `rem(27006, 60 * 60) = 1806` minutes.
+Now 1806 minutes is `div(1806, 60) = 30` minutes and `rem(1806, 60) = 6` seconds.
++
+So the final time is 7:30:06 am.
