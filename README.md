@@ -1,10 +1,16 @@
 # Notes
 
-Personal notes using asciidoc and github pages.
+Personal notes using asciidoc and GitHub pages.
 
 ## CI/CD
 
-Simply push changes in the `asciidocs/` directory to the GitHub `main` branch.
+Simply push changes in the `asciidocs/` directory to the GitHub `main` branch to automatically trigger the workflow.
+
+View changes in the [GitHub page](https://thirdwater.github.io/notes/) after the workflow has been completed.
+
+### Manual Trigger
+
+Navigate to [Actions > Publish with Asciidoctor](https://github.com/Thirdwater/notes/actions?query=workflow%3A%22Publish+with+Asciidoctor%22) and run workflow from the `main` branch.
 
 ## Testing Locally
 
