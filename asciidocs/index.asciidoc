@@ -1,8 +1,7 @@
 = Notes
-
+// Document header
 // Metadata
 :description: A collection of personal notes on various topics.
-
 // Settings
 :toc: left
 :toclevels: 3
@@ -11,6 +10,7 @@
 :source-highlighter: pygments
 :pygments-style: tango
 :pygments-linenums-mode: table
+// End document header
 
 // Content
 :leveloffset: +1
