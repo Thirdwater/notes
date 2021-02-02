@@ -2,8 +2,8 @@
 
 :leveloffset: +1
 
-include::pragmatic-programmer.asciidoc[]
+include::pragmatic-programmer/index.asciidoc[]
 
-include::think-julia.asciidoc[]
+include::think-julia/index.asciidoc[]
 
 :leveloffset: -1
