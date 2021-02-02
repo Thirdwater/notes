@@ -1,0 +1,34 @@
+= Chess Notes
+
+== General
+
+* Find time-efficient moves
+** Utilise free tempos (e.g. zwischenzug)
+** Go for multiple objectives (e.g. double attacks)
+*** Better if opponent's reply can't cover all the objectives
+* Utilise existing connections and lost connections
+** Defender leaving
+** Broken pins
+
+== Early Game
+
+* Develop pieces
+* Open development options (e.g. pushing pawns for bishops)
+* Open castling options (e.g. develop minor pieces)
+* Limit opponent options
+** Centre hold
+** a3/a6 and h3/h6 pawns blocking the knight or bishop
+** Blocking pawn pushes
+* Limit opponent tempos
+** Remove checks with development (e.g. castling to safety)
+** Remove captures with development
+* Adding defenders
+* Setting up posts
+** Bishops on key diagonals
+** Knights on outposts
+
+== Middle Game
+
+* Targeting already limited pieces (e.g. forcing backward moves/less active squares)
+* Targeting pieces around/opening up lines toward the enemy king
+* Limit opponent's control over key areas

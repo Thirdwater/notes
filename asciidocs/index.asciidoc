@@ -5,6 +5,7 @@
 
 // Settings
 :toc: left
+:toclevels: 3
 :toc-title: Notes
 :sectnums:
 :source-highlighter: pygments
@@ -13,5 +14,9 @@
 
 // Content
 :leveloffset: +1
+
 include::resources.asciidoc[]
+include::think-julia.asciidoc[]
+include::chess.asciidoc[]
+
 :leveloffset: 0
