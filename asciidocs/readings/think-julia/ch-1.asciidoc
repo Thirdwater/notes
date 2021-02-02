@@ -1,0 +1,40 @@
+= Chapter 1: The Way of the Program
+
+[quote, "Think Julia", "Chapter 1, page 9"]
+It is better to make mistakes now and on purpose rather than later and accidentally.
+
+== Exercise 1-1
+
+Consider `println("Hello")`;
+
+. Leaving out the closing parenthesis results in incomplete syntax with `premature end of input` error.
+  Leaving out the opening or both of the parentheses result in syntax error with `extra token """ after end of expression`.
+
+. Leaving out one quotation mark results in `invalid string syntax` error.
+  Leaving out both quotation marks changes the semantic and may result in `UndefVarError` or worst in case the string actually correspond to some existing variable.
+
+. Plus sign is valid in front of a number.
+  `2\++2` is not a valid syntax since `++` is not a built-in operator.
+  But `2+ +2`, `2 + +2`, `+2+ +2`, etc. are all valid since `+2` is equivalent to `2`.
+
+. Leading zeros are valid but ignored.
+
+. Two values with no operator between them would result in syntax error with the second value being an invalid `extra token` after the first value.
+  If there's no space between them, the numerical values would simply become one number value.
+
+== Exercise 1-2
+
+. There are `(42 * 60) + 42 = 2562` seconds in 42 minutes and 42 seconds.
+
+Take 1 mile to be 1.61 km;
+
+[start=2]
+. There are `10 / 1.61 ~ 6.21` miles in 10 km.
+
+. For a 10 km in 37 minutes and 48 seconds pace,
+  we get 6.21 miles in 37 minutes and 48 seconds.
++
+This is `(37 * 60) + 48 = 2268` seconds in total.
++
+So the average speed is `(10 / 1.61) / 2268` miles per second,
+which is `60 * 60 * (10 / 1.61) / 2268 ~ 9.86` miles per hour.
