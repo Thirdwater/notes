@@ -2,19 +2,58 @@
 
 == Programming
 :book-pragmatic-programmer: https://pragprog.com/titles/tpp20/the-pragmatic-programmer-20th-anniversary-edition/
+:article-mcve: https://stackoverflow.com/help/minimal-reproducible-example
+:article-joel-reading-list: https://www.joelonsoftware.com/#post-923
+:article-joel-test: https://www.joelonsoftware.com/2000/08/09/the-joel-test-12-steps-to-better-code/
 
-* {book-pragmatic-programmer}[The Pragmatic Programmer] book by David Thomas and Andrew Hunt
+* {book-pragmatic-programmer}[The Pragmatic Programmer]
+  book by David Thomas and Andrew Hunt
+* {article-mcve}[Minimal, Complete, and Verifiable Example (MCVE)]
+  article by Stack Overflow
+* {article-joel-reading-list}[[Joel on Software\] Reading Lists]
+  articles by Joel Spolsky
+** {article-joel-test}[The Joel Test: 12 Steps to Better Code]
+  article by Joel Spolsky
 
 == Programming Languages
-:book-think-julia: https://benlauwens.github.io/ThinkJulia.jl/latest/book.html
+
+=== Java
 :book-effective-java: https://www.amazon.com/Effective-Java-Joshua-Bloch/dp/0134685997
 
-* {book-think-julia}[Think Julia: How to Think Like a Computer Scientist] book by Ben Lauwens and Allen Downey
-* {book-effective-java}[Effective Java] book by Joshua Bloch
+* {book-effective-java}[Effective Java]
+  book by Joshua Bloch
+
+=== Julia
+:book-think-julia: https://benlauwens.github.io/ThinkJulia.jl/latest/book.html
+:course-mit-introduction-to-computational-thinking: https://computationalthinking.mit.edu
+
+* {book-think-julia}[Think Julia: How to Think Like a Computer Scientist]
+  book by Ben Lauwens and Allen Downey
+* {course-mit-introduction-to-computational-thinking}[[18.S190\] Introduction to Computational Thinking with Julia]
+  course by Alan Edelman and David P. Sanders, MIT
 
 == Machine Learning
+:wiki-pathmind-ai: https://wiki.pathmind.com
 :book-deep-learning: https://www.deeplearningbook.org
 :book-reinforcement-learning: http://incompleteideas.net/book/the-book.html
+:course-stanford-machine-learning: https://see.stanford.edu/Course/CS229
 
-* {book-deep-learning}[Deep Learning] book by Ian Goodfellow, Yoshua Bengio, and Aaron Courville
-* {book-reinforcement-learning}[Reinforcement Learning: An Introduction] book by Richard S. Sutton and Andrew G. Barto
+* {wiki-pathmind-ai}[AI Wiki]
+  by Pathmind
+* {book-deep-learning}[Deep Learning]
+  book by Ian Goodfellow, Yoshua Bengio, and Aaron Courville
+* {book-reinforcement-learning}[Reinforcement Learning: An Introduction]
+  book by Richard S. Sutton and Andrew G. Barto
+* {course-stanford-machine-learning}[[CS229\] Machine Learning]
+  course by Andrew Ng, Stanford (Stanford Engineering Everywhere series)
+
+== Online Courses
+:course-mit-ocw: https://ocw.mit.edu/index.htm
+:course-stanford-see: https://see.stanford.edu
+:course-cmu-oli: https://oli.cmu.edu
+:course-google-tech-dev-guide: https://techdevguide.withgoogle.com
+
+* {course-mit-ocw}[[MIT\] Open Courseware]
+* {course-stanford-see}[[Stanford\] Engineering Everywhere]
+* {course-cmu-oli}[[Carnegie Mellon\] Open Learning Initiative]
+* {course-google-tech-dev-guide}[[Google\] Tech Dev Guide]
