@@ -17,7 +17,7 @@
 
 include::resources.asciidoc[]
 
-include::readings.asciidoc[]
+include::readings/index.asciidoc[]
 
 include::chess.asciidoc[]
 
