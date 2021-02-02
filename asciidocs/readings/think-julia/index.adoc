@@ -2,8 +2,8 @@
 
 :leveloffset: +1
 
-include::ch-1.asciidoc[]
+include::ch-1.adoc[]
 
-include::ch-2.asciidoc[]
+include::ch-2.adoc[]
 
 :leveloffset: -1

@@ -17,7 +17,7 @@ jobs:
               run: sudo apt-get install -y asciidoctor
 
             - name: Convert documents to HTML
-              run: asciidoctor asciidocs/index.asciidoc --destination-dir docs --verbose
+              run: asciidoctor asciidocs/index.adoc --destination-dir docs --verbose
 
             - name: Save Changes
               run: |
