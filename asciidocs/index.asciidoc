@@ -16,7 +16,9 @@
 :leveloffset: +1
 
 include::resources.asciidoc[]
-include::think-julia.asciidoc[]
+
+include::readings.asciidoc[]
+
 include::chess.asciidoc[]
 
-:leveloffset: 0
+:leveloffset: -1

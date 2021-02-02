@@ -1,4 +1,4 @@
-= Chess Notes
+= Chess
 
 == General
 
