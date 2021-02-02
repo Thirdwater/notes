@@ -1,9 +1,0 @@
-= Readings
-
-:leveloffset: +1
-
-include::pragmatic-programmer/index.asciidoc[]
-
-include::think-julia/index.asciidoc[]
-
-:leveloffset: -1

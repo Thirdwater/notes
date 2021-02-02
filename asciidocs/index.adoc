@@ -15,10 +15,10 @@
 // Content
 :leveloffset: +1
 
-include::resources.asciidoc[]
+include::resources.adoc[]
 
-include::readings/index.asciidoc[]
+include::readings/index.adoc[]
 
-include::chess.asciidoc[]
+include::chess.adoc[]
 
 :leveloffset: -1
