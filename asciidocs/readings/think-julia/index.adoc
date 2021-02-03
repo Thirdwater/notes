@@ -6,4 +6,6 @@ include::ch-1.adoc[]
 
 include::ch-2.adoc[]
 
+include::ch-3.adoc[]
+
 :leveloffset: -1

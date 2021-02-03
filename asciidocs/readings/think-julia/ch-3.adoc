@@ -1,0 +1,8 @@
+= Chapter 3: Function
+
+== Exercise 3-1
+
+* Calling a function before defining it results in `UndefVarError`.
+* Calling an undefined function inside another function is valid in general
+  (assuming all relevant function definitions are done before the root call)
+  since they would've been defined by the time the function gets called.
