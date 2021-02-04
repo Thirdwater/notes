@@ -6,3 +6,48 @@
 * Calling an undefined function inside another function is valid in general
   (assuming all relevant function definitions are done before the root call)
   since they would've been defined by the time the function gets called.
+
+== Exercise 3-2
+
+[source, julia, linenums, options="nowrap"]
+----
+function rightjustify(s::String, column_width::Int=70)
+    string_length = length(s)
+    if string_length >= column_width
+        return s
+    end
+    padding_length = column_width - string_length
+    padding = " " ^ padding_length
+    return padding * s
+end
+----
+
+== Exercise 3-3
+
+. Prints:
++
+[source, julia, linenums, options="nowrap"]
+----
+spam
+spam
+----
+
+[start=4]
+. Prints:
++
+[source, julia, linenums, options="nowrap"]
+----
+spam
+spam
+spam
+spam
+----
+
+. Call `dotwice` twice.
+
+== Exercise 3-4
+:script-think-julia-exercise-3-4: https://github.com/Thirdwater/notes/blob/main/readings/think-julia/ch-3/exercise-3-4.jl
+
+In the spirit of the exercise, we will also not use recursions.
+
+{script-think-julia-exercise-3-4}[[Script\]]
