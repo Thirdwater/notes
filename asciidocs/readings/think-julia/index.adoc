@@ -1,5 +1,4 @@
 = Think Julia
-:imagesdir: ../../../readings/think-julia
 
 :leveloffset: +1
 

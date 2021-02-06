@@ -81,7 +81,7 @@ turtle = Turtle()
 end 120 120
 ----
 
-image::ch-4/exercise-4-4-example.svg[]
+image:https://raw.githubusercontent.com/Thirdwater/notes/main/readings/think-julia/ch-4/exercise-4-4-example.svg[]
 
 == Exercise 4-5
 
@@ -107,7 +107,7 @@ turtle = Turtle()
 end
 ----
 
-image::ch-4/exercise-4-5-example.svg[]
+image:https://raw.githubusercontent.com/Thirdwater/notes/main/readings/think-julia/ch-4/exercise-4-5-example.svg[]
 
 == Exercise 4-6
 
@@ -135,7 +135,7 @@ turtle = Turtle()
 end
 ----
 
-image::ch-4/exercise-4-6-example.svg[]
+image:https://raw.githubusercontent.com/Thirdwater/notes/main/readings/think-julia/ch-4/exercise-4-6-example.svg[]
 
 == Exercise 4-7
 
@@ -167,7 +167,7 @@ The `circle` function can now be defined using `arc(turtle, radius, 360)` instea
 end
 ----
 
-image::ch-4/exercise-4-7-example.svg[]
+image:https://raw.githubusercontent.com/Thirdwater/notes/main/readings/think-julia/ch-4/exercise-4-7-example.svg[]
 
 == Exercise 4-7 (Extra)
 
