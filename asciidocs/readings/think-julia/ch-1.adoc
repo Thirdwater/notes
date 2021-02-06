@@ -1,6 +1,6 @@
 = Chapter 1: The Way of the Program
 
-[quote, "Think Julia", "Chapter 1, page 9"]
+[quote, "Chapter 1, page 9"]
 It is better to make mistakes now and on purpose rather than later and accidentally.
 
 == Exercise 1-1

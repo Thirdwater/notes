@@ -1,0 +1,204 @@
+= Chapter 4: Case Study: Interface Design
+
+== Exercise 4-1
+
+[source, julia, linenums, options="nowrap"]
+----
+turtle = Turtle()
+@svg begin
+    forward(turtle, 100)
+    turn(turtle, -90)
+    forward(turtle, 100)
+    turn(turtle, -90)
+    forward(turtle, 100)
+    turn(turtle, -90)
+    forward(turtle, 100)
+    turn(turtle, -90)
+end
+----
+
+Minimise context scopes as much as possible to simplify code.
+
+[source, julia, linenums, options="nowrap"]
+----
+turtle = Turtle()
+@svg begin
+    for i in 1:4
+        forward(turtle, 100)
+        turn(turtle, -90)
+    end
+end
+----
+
+== Exercise 4-2
+
+Functions should only do what its name suggests, no more, and no less.
+So svg related contexts shouldn't be part of the square tracing function.
+
+[source, julia, linenums, options="nowrap"]
+----
+function square(turtle)
+    for i in 1:4
+        forward(turtle, 100)
+        turn(turtle, -90)
+    end
+end
+----
+
+== Exercise 4-3
+
+Having defined the function, we leave it to the caller how the function will be used (i.e. contexts).
+
+[source, julia, linenums, options="nowrap"]
+----
+turtle = Turtle()
+@svg begin
+    square(turtle)
+end
+----
+
+== Exercise 4-4
+
+[source, julia, linenums, options="nowrap"]
+----
+function square(turtle, len::Number=100)
+    for i in 1:4
+        forward(turtle, len)
+        turn(turtle, -90)
+    end
+end
+----
+
+[source, julia, linenums, options="nowrap"]
+----
+turtle = Turtle()
+@svg begin
+    Luxor.Reposition(turtle, -50, 50)
+    square(turtle, 10)
+    square(turtle, 20)
+    square(turtle, 50)
+    square(turtle, 100)
+end 120 120
+----
+
+image::ch-4/exercise-4-4-example.svg[]
+
+== Exercise 4-5
+
+[source, julia, linenums, options="nowrap"]
+----
+function polygon(turtle, num_sides::Int=4, len::Number=100)
+    angle = 360 / num_sides
+    for i in 1:num_sides
+        forward(turtle, len)
+        turn(turtle, angle)
+    end
+end
+----
+
+[source, julia, linenums, options="nowrap"]
+----
+turtle = Turtle()
+@svg begin
+    Luxor.Reposition(turtle, -16, -50)
+    for num_sides in 3:10
+        polygon(turtle, num_sides, 32)
+    end
+end
+----
+
+image::ch-4/exercise-4-5-example.svg[]
+
+== Exercise 4-6
+
+A good optimisation here is to take the number of sides to be some function of the circumference
+(e.g. `3 + trunc(circumference / 3)` as in the book).
+
+[source, julia, linenums, options="nowrap"]
+----
+function circle(turtle, radius::Number=50)
+    circumference = 2 * π * radius
+    num_sides = Int(floor(circumference))
+    len = circumference / num_sides
+    polygon(turtle, num_sides, len)
+end
+----
+
+[source, julia, linenums, options="nowrap"]
+----
+turtle = Turtle()
+@svg begin
+    Luxor.Reposition(turtle, 0, -50)
+    for radius in 10:10:50
+        circle(turtle, radius)
+    end
+end
+----
+
+image::ch-4/exercise-4-6-example.svg[]
+
+== Exercise 4-7
+
+[source, julia, linenums, options="nowrap"]
+----
+function arc(turtle, radius::Number=50, angle_degree::Number=180)
+    arc_length = 2 * π * radius * angle_degree / 360
+    num_sides = Int(floor(arc_length))
+    len = arc_length / num_sides
+    turn_angle = angle_degree / num_sides
+    for i in 1:num_sides
+        forward(turtle, len)
+        turn(turtle, turn_angle)
+    end
+end
+----
+
+The `circle` function can now be defined using `arc(turtle, radius, 360)` instead.
+
+[source, julia, linenums, options="nowrap"]
+----
+@svg begin
+    degree = 180
+    for radius in 10:10:50
+        turtle = Turtle()
+        Luxor.Reposition(turtle, 0, -50)
+        arc(turtle, radius, degree)
+    end
+end
+----
+
+image::ch-4/exercise-4-7-example.svg[]
+
+== Exercise 4-7 (Extra)
+
+[quote, "Chapter 4, page 42"]
+Often you don't know enough at the beginning of a project to design all the interfaces.
+Once you start coding, you understand the problem better.
+Sometimes refactoring is a sign that you have learned something.
+
+[source, julia, linenums, options="nowrap"]
+----
+function polyline(turtle, num_sides::Int=4, len::Number=100, angle_degree::Number=360)
+    for i in 1:num_sides
+        forward(turtle, len)
+        turn(turtle, angle_degree)
+    end
+end
+
+function polygon(turtle, num_sides::Int=4, len::Number=100)
+    turn_angle = 360 / num_sides
+    polyline(turtle, num_sides, len, turn_angle)
+end
+
+function arc(turtle, radius::Number=50, angle_degree::Number=180)
+    arc_length = 2 * π * radius * angle_degree / 360
+    num_sides = Int(floor(arc_length))
+    len = arc_length / num_sides
+    turn_angle = angle_degree / num_sides
+    polyline(turtle, num_sides, len, turn_angle)
+end
+
+function circle(turtle, radius::Number=50)
+    arc(turtle, radius, 360)
+end
+----
