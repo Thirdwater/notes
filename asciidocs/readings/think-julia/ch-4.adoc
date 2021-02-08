@@ -104,7 +104,7 @@ turtle = Turtle()
     for num_sides in 3:10
         polygon(turtle, num_sides, 32)
     end
-end
+end 120 120
 ----
 
 image:https://raw.githubusercontent.com/Thirdwater/notes/main/readings/think-julia/ch-4/exercise-4-5-example.svg[]
@@ -132,7 +132,7 @@ turtle = Turtle()
     for radius in 10:10:50
         circle(turtle, radius)
     end
-end
+end 120 120
 ----
 
 image:https://raw.githubusercontent.com/Thirdwater/notes/main/readings/think-julia/ch-4/exercise-4-6-example.svg[]
@@ -164,7 +164,7 @@ The `circle` function can now be defined using `arc(turtle, radius, 360)` instea
         Luxor.Reposition(turtle, 0, -50)
         arc(turtle, radius, degree)
     end
-end
+end 120 120
 ----
 
 image:https://raw.githubusercontent.com/Thirdwater/notes/main/readings/think-julia/ch-4/exercise-4-7-example.svg[]
@@ -175,6 +175,14 @@ image:https://raw.githubusercontent.com/Thirdwater/notes/main/readings/think-jul
 Often you don't know enough at the beginning of a project to design all the interfaces.
 Once you start coding, you understand the problem better.
 Sometimes refactoring is a sign that you have learned something.
+
+A simple development plan with some drawbacks
+(see alternatives in later chapters):
+
+. Get to a working state
+. Encapsulate coherent blocks into functions
+. Generalise functions when appropriate
+. Refactor functions when there are common routines
 
 [source, julia, linenums, options="nowrap"]
 ----
@@ -202,3 +210,102 @@ function circle(turtle, radius::Number=50)
     arc(turtle, radius, 360)
 end
 ----
+
+[quote, "Chapter 4, page 44"]
+A well-designed interface should be simple to explain;
+if you have a hard time explaining one of your functions,
+maybe the interface could be improved.
+
+== Exercise 4-8
+
+. Stack diagram of `circle(turtle, radius)`:
++
+[source, julia, linenums, options="nowrap"]
+----
+circle:
+    turtle = Turtle(0.0, 0.0, true, 0.0, (0.0, 0.0, 0.0))
+    radius = 50
+
+arc:
+    turtle = Turtle(0.0, 0.0, true, 0.0, (0.0, 0.0, 0.0))
+    radius = 50
+    angle_degree = 360
+    arc_length = 314.1592653589793
+    num_sides = 314
+    len = 1.0005072145190423
+    turn_angle = 1.1464968152866242
+
+polyline:
+    turtle = Turtle(0.0, 0.0, true, 0.0, (0.0, 0.0, 0.0))
+    num_sides = 314
+    len = 1.0005072145190423
+    angle_degree = 1.1464968152866242
+----
+
+. The polygon approximation isn't accurate because the implementation
+(using polygon/polyline methods) starts with `forward` then `turn`,
+so we will always be outside of the circle.
+Given enough granularity, there should be no difference
+whether our linear approximation of the circle is from the interior
+or the exterior.
+However, when the approximation is very coarse,
+staying in the interior of the circle will give much better results:
++
+image:https://raw.githubusercontent.com/Thirdwater/notes/main/readings/think-julia/ch-4/exercise-4-8-coarse.svg[]
+image:https://raw.githubusercontent.com/Thirdwater/notes/main/readings/think-julia/ch-4/exercise-4-8-corrected.svg[]
++
+In the corrected example on the right, we also add a tiny line at the end
+to also indicate the corrected turtle orientation at the end of the arc.
++
+Note that we also use the correction of 2 half-turns
+in the same direction as the original before and after the routine
+instead of 2 half-turns in opposite directions as in the book.
+
+== Exercise 4-9
+
+[source, julia, linenums, options="nowrap"]
+----
+function petal(turtle, radius::Number=50, angle_degree::Number=60)
+    reverse_angle = 180 - angle_degree
+    for i in 1:2
+        arc(turtle, radius, angle_degree, false)
+        turn(turtle, reverse_angle)
+    end
+end
+
+function flower(turtle, radius::Number=50, angle_degree::Number=60, petals::Int=3)
+    petal_angle = 360 / petals
+    for i in 1:petals
+        petal(turtle, radius, angle_degree)
+        turn(turtle, petal_angle)
+    end
+end
+----
+
+[source, julia, linenums, options="nowrap"]
+----
+@svg begin
+    turtle1 = Turtle()
+    Luxor.Reposition(turtle1, -120, 0)
+    flower(turtle1, 50, 60, 7)
+
+    turtle2 = Turtle()
+    flower(turtle2, 40, 80, 10)
+
+    turtle3 = Turtle()
+    Luxor.Reposition(turtle3, 120, 0)
+    flower(turtle3, 150, 20, 20)
+end 360 120
+----
+
+image:https://raw.githubusercontent.com/Thirdwater/notes/main/readings/think-julia/ch-4/exercise-4-9-example.svg[]
+
+== Exercise 4-10
+
+
+
+== Exercise 4-11
+
+
+
+== Exercise 4-12
