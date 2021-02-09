@@ -56,6 +56,11 @@ function circle(turtle::Turtle, radius::Number=50)
 end
 
 
+"""
+petal(turtle, radius, angle_degree)
+
+Draws a petal from 2 arcs with the given radius and angle (in degrees).
+"""
 function petal(turtle::Turtle, radius::Number=50, angle_degree::Number=60)
     reverse_angle = 180 - angle_degree
     for i in 1:2
@@ -65,11 +70,49 @@ function petal(turtle::Turtle, radius::Number=50, angle_degree::Number=60)
 end
 
 
+"""
+flower(turtle, radius, angle_degree, petals)
+
+Draws a flower with the given petals each with the given radius and angle (in degrees).
+"""
 function flower(turtle::Turtle, radius::Number=50, angle_degree::Number=60, petals::Int=3)
     petal_angle = 360 / petals
     for i in 1:petals
         petal(turtle, radius, angle_degree)
         turn(turtle, petal_angle)
+    end
+end
+
+
+"""
+sliceofpie(turtle, side_length, main_angle)
+
+Draws a slice of pie with the given side length and main angle (in degrees).
+"""
+function sliceofpie(turtle::Turtle, side_length::Number=50, main_angle::Number=60)
+    side_angle = (180 - main_angle) / 2
+    turn_angle = 180 - side_angle
+    return_angle = 180 - main_angle
+    chord_length = 2 * side_length * abs(sin(deg2rad(main_angle) / 2))
+    forward(turtle, side_length)
+    turn(turtle, turn_angle)
+    forward(turtle, chord_length)
+    turn(turtle, turn_angle)
+    forward(turtle, side_length)
+    turn(turtle, return_angle)
+end
+
+"""
+pie(turtle, side_length, num_slices)
+
+Draws a pie with the given number of slices and side length.
+"""
+function pie(turtle::Turtle, side_length::Number=50, num_slices::Int=3)
+    pie_angle = 360 / num_slices
+    turn(turtle, pie_angle / 2)
+    for i in 1:num_slices
+        sliceofpie(turtle, side_length, pie_angle)
+        turn(turtle, pie_angle)
     end
 end
 
@@ -120,4 +163,25 @@ function test_flower()
         Reposition(turtle3, 120, 0)
         flower(turtle3, 150, 20, 20)
     end 360 120
+end
+
+
+function test_pie()
+    @svg begin
+        turtle1 = Turtle()
+        Reposition(turtle1, -180, 0)
+        pie(turtle1, 50, 5)
+
+        turtle2 = Turtle()
+        Reposition(turtle2, -60, 0)
+        pie(turtle2, 50, 6)
+
+        turtle3 = Turtle()
+        Reposition(turtle3, 60, 0)
+        pie(turtle3, 50, 7)
+
+        turtle4 = Turtle()
+        Reposition(turtle4, 180, 0)
+        pie(turtle4, 50, 8)
+    end 480 120
 end
