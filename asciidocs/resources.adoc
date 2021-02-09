@@ -19,9 +19,17 @@
 
 === Java
 :book-effective-java: https://www.amazon.com/Effective-Java-Joshua-Bloch/dp/0134685997
+:course-princeton-introduction-to-computer-science: https://introcs.cs.princeton.edu/java/home/
+:article-princeton-introcs-java11cheatsheet: https://introcs.cs.princeton.edu/java/11cheatsheet/
+:article-princeton-introcs-assignments: https://introcs.cs.princeton.edu/java/assignments/
 
 * {book-effective-java}[Effective Java]
   book by Joshua Bloch
+* {course-princeton-introduction-to-computer-science}[Introduction to Computer Science]
+  course by Princeton
+** {article-princeton-introcs-java11cheatsheet}[Java Programming Cheatsheet]
+** {article-princeton-introcs-assignments}[Creative Programming Assignments]
+   (language agnostic)
 
 === Julia
 :book-think-julia: https://benlauwens.github.io/ThinkJulia.jl/latest/book.html
