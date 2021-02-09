@@ -1,4 +1,7 @@
 = Chapter 4: Case Study: Interface Design
+:script-think-julia-exercise-4: https://github.com/Thirdwater/notes/blob/main/readings/think-julia/ch-4/exercise-4.jl
+
+{script-think-julia-exercise-4}[[Script\]]
 
 == Exercise 4-1
 
