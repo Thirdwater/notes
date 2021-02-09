@@ -1,5 +1,13 @@
 = Chess
 
+== Order
+
+. Checkmates
+. Avoid checkmates
+. The rest is heuristics (e.g. material, position, activity)
+
+Only the first 2 are logical while the rest is not until we have a perfect agent.
+
 == General
 
 * Find time-efficient moves
