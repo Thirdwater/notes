@@ -302,7 +302,53 @@ image:https://raw.githubusercontent.com/Thirdwater/notes/main/readings/think-jul
 
 == Exercise 4-10
 
+[source, julia, linenums, options="nowrap"]
+----
+function sliceofpie(turtle, side_length::Number=50, main_angle::Number=60)
+    side_angle = (180 - main_angle) / 2
+    turn_angle = 180 - side_angle
+    return_angle = 180 - main_angle
+    chord_length = 2 * side_length * abs(sin(deg2rad(main_angle) / 2))
+    forward(turtle, side_length)
+    turn(turtle, turn_angle)
+    forward(turtle, chord_length)
+    turn(turtle, turn_angle)
+    forward(turtle, side_length)
+    turn(turtle, return_angle)
+end
 
+function pie(turtle, side_length::Number=50, num_slices::Int=3)
+    pie_angle = 360 / num_slices
+    turn(turtle, pie_angle / 2)
+    for i in 1:num_slices
+        sliceofpie(turtle, side_length, pie_angle)
+        turn(turtle, pie_angle)
+    end
+end
+----
+
+[source, julia, linenums, options="nowrap"]
+----
+@svg begin
+    turtle1 = Turtle()
+    Luxor.Reposition(turtle1, -180, 0)
+    pie(turtle1, 50, 5)
+
+    turtle2 = Turtle()
+    Luxor.Reposition(turtle2, -60, 0)
+    pie(turtle2, 50, 6)
+
+    turtle3 = Turtle()
+    Luxor.Reposition(turtle3, 60, 0)
+    pie(turtle3, 50, 7)
+
+    turtle4 = Turtle()
+    Luxor.Reposition(turtle4, 180, 0)
+    pie(turtle4, 50, 8)
+end 480 120
+----
+
+image:https://raw.githubusercontent.com/Thirdwater/notes/main/readings/think-julia/ch-4/exercise-4-10-example.svg[]
 
 == Exercise 4-11
 
