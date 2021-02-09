@@ -14,8 +14,8 @@ Consider `println("Hello")`;
   Leaving out both quotation marks changes the semantic and may result in `UndefVarError` or worst in case the string actually correspond to some existing variable.
 
 . Plus sign is valid in front of a number.
-  `2\++2` is not a valid syntax since `++` is not a built-in operator.
-  But `2+ +2`, `2 + +2`, `+2+ +2`, etc. are all valid since `+2` is equivalent to `2`.
+  `2{plus}{plus}2` is not a valid syntax since `{plus}{plus}` is not a built-in operator.
+  But `2{plus} {plus}2`, `2 {plus} {plus}2`, `{plus}2{plus} {plus}2`, etc. are all valid since `{plus}2` is equivalent to `2`.
 
 . Leading zeros are valid but ignored.
 
