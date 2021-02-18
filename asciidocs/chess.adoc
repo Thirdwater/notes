@@ -2,11 +2,11 @@
 
 == Order
 
-. Checkmates
-. Avoid checkmates
+. Force checkmates
+. Avoid force checkmates
 . The rest is heuristics (e.g. material, position, activity)
 
-Only the first 2 are logical while the rest is not until we have a perfect agent.
+Technically, only the first 2 are strictly logical while the rest is not until we have a perfect agent.
 
 == General
 
